@@ -1,6 +1,5 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
+import 'package:flutter_app_stack_overflow/features/home_screen/asso_home_screen.dart';
 
 class EmailLogin extends StatefulWidget {
   @override
@@ -34,7 +33,7 @@ class _EmailLoginState extends State<EmailLogin> {
                     fontFamily: 'AppFont'),
               )),
             ),
-            emailLoginForm(_emailController, _passwordController),
+            emailLoginForm(context, _emailController, _passwordController),
           ],
         ),
       ),
@@ -42,7 +41,9 @@ class _EmailLoginState extends State<EmailLogin> {
   }
 }
 
-Widget emailLoginForm(TextEditingController _emailController,
+Widget emailLoginForm(
+    BuildContext context,
+    TextEditingController _emailController,
     TextEditingController _passwordController) {
   return Flexible(
     flex: 2,
@@ -103,6 +104,14 @@ Widget emailLoginForm(TextEditingController _emailController,
                   onPressed: () {
                     String userName = _emailController.text;
                     String password = _passwordController.text;
+
+                    if (userName.isNotEmpty && password.isNotEmpty) {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => HomeScreen()));
+                    }
+
                     print('login attempt: $userName with $password');
                   },
                   child: Text(

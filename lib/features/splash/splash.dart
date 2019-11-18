@@ -14,7 +14,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void navigationPage() {
-    Navigator.of(context).pushReplacementNamed('/LoginScreen');
+    Navigator.of(context).pushReplacementNamed('/Home');
   }
 
   @override
@@ -28,7 +28,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       body: Center(
         child: Text(
-          'QuickBee',
+          'DGK Leitlinien',
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 48,fontFamily: 'AppFont'),
         ),
       ),

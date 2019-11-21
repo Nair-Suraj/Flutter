@@ -1,0 +1,952 @@
+@charset "UTF-8";
+
+
+
+/*----------------------------font regular-------------------------------*/
+
+body 					
+						{
+						-webkit-user-select:none;
+						 -webkit-hyphens:auto;			/*content*/
+						 -moz-hyphens:auto;
+						hyphens:auto;
+						margin: 0px 0px 0px 0px;
+						padding: 5px 3px 5px 3px;
+						font-family:Helvetica;
+						color:#3E3D40;
+						font-size:17px;
+						word-spacing:1px;
+						line-height:19px;
+						text-align:left;
+						word-break: break-word;	
+						}
+
+
+body.space  
+						{
+						padding:1px 1px 1px 1px; /*6px 6px 6px 6px;*/
+						}						
+
+
+						
+					
+p.html-page-end-here	{
+						color:#F00;
+						font-size: 14px;
+						font-weight: bold;
+						}
+
+
+
+/*-------------------Headlines which are going to be TOC----------------*/						
+
+p.h1					{ 																
+						color:#00447C;
+						font-size: 15px;
+						line-height: 1.4em;/*22px*/
+						font-weight: bold;
+						margin: 5px 0px 5px 2px;
+						/*display:none;*/
+						}
+						
+p.h2					{ 																
+						color:#00447C;
+						font-size: 14px;
+						line-height: 1.4em;/*22px*/
+						font-weight: bold;
+						margin: 12px 0px 5px 2px;
+						/*display:none;*/
+						}
+						
+p.h3					{ 																
+						color:#00447C;
+						font-size: 13px;
+						line-height: 1.4em;/*22px*/
+						font-weight: bold;
+						margin: 3px 0px 5px 2px;
+						/*display:none;*/
+						}
+
+/*---------------------If required use h4, usually doesn't go into TOC of App---------------*/
+
+
+p.h4					{ 																
+						color:#00447C;
+						font-size: 14px;
+						line-height: 1.4em;/*22px*/
+						font-weight: bold;
+						margin: 3px 0px 5px 2px;
+						/*display:none;*/
+						}
+						
+/*---------------------Content span class and p---------------*/
+
+						
+						
+/*.bold					{
+						font-weight: bold;
+						color:#f06e00;		/* red font color*/
+						/*}*/
+						
+						
+.bold-black				{
+						font-weight: bold;
+						}
+						
+.underlined				{
+						text-decoration:underline;	
+						}	
+
+.underlined-bold		{
+						font-weight: bold;
+						text-decoration:underline;	
+						}											
+					
+.italic					{
+						font-style:italic;
+						}
+						
+.bold-italic					{
+						font-style:italic;
+						font-weight:bold;
+						}
+
+.level-2-link			{
+						font-style:normal;
+						color:#CADB2A;
+						}
+						
+p						{
+						margin: 2px;
+						}
+						
+p.content				{
+						margin-bottom: 5px;
+						}
+												
+span.sup 				{
+						vertical-align:top; 
+						font-size:0.8em; 
+						line-height:100%;
+						}
+						
+span.sub 					{
+						vertical-align:bottom; 
+						font-size:0.8em; 
+						line-height:100%;
+						}
+
+
+sub,sup					{
+						line-height: 0.6em;
+						}
+p.reference 											
+						{
+						font-size:16px;
+						line-height:18px;
+						}
+						
+.bottom
+						{
+						vertical-align:bottom;			/*  additional class for bottom alignment  */
+						}
+
+								
+/*-----------------------Listings regular dot colored-----------------------*/
+
+p.list-level1:before 	
+						{ 
+						content: "\2022";				/* bold bulltet: guideline main color*/
+					   	margin-right:0.5em;
+						color:#000000;  
+						}
+
+p.list-level1        	
+						{ 
+						margin: 0px;					
+				       	text-indent:-0.8em;             
+				       	margin-left:1.15em;
+						font-size:17px;
+						line-height:19px;
+						}
+
+
+/*-----------------------Listings regular dot black color-----------------------*/
+
+p.list-level1-black:before 	
+						{ 
+						content: "\2022";				/* bold bulltet: black*/
+					   	margin-right:0.5em;
+						color:#000000; 
+						}						
+
+p.list-level1-black        	
+						{ 
+						margin: 0px;					
+				       	text-indent:-0.9em;             
+				       	margin-left:1.15em;
+						font-family:Helvetica;
+						color:#3E3D40; 
+						}
+					
+
+						
+/*---------------------------listing hyphen/cycle -------------------------*/
+ 
+p.list-level2:before 	{
+						content: "\2212";		/*"\2022"; dot*/
+					  	margin-right:0.3em;
+						}            
+
+p.list-level2			{
+						margin: 0px;					
+				       	text-indent:-0.9em;             
+				       	margin-left:1.15em;
+						font-family:Helvetica;
+						color:#3E3D40; 
+						}	
+
+p.list-level2-hyph:before 	
+{ 
+						content: "\2212";				/*"\2022"; dot*/
+					   	margin-right:0.45em; 
+						}
+
+p.list-level2-hyph        	
+{ 
+						margin: 0px;					
+				       	text-indent:-0.9em;             
+				       	margin-left:1.90em; 			/*   double margin left for indent   */
+						}						
+/*-----------------------Listings with text indent-----------------------*/	
+	              	              
+
+p.list-level1-indent:before 	
+						{ 
+						content: "\2022";				/* bold bulltet: 25CF and black*/
+					   	margin-right:0.5em;
+						color:#000000; 
+						}						
+
+p.list-level1-indent        	
+						{ 
+						margin: 0px;					
+				       	text-indent:-0.9em;             
+				       	margin-left:2em;
+						font-family:Helvetica;
+						color:#3E3D40; 
+						}
+
+/*------------------------------ Listing Triangle -----------------------------*/
+p.list-level3-triangle:before 	
+{ 
+						content: ">";  /*"\25BA \0020"*/
+						font-size:10px;
+						font-weight:bold;
+					   	margin-right:0.4em;
+						color:#3dcc00; /*NSTEMI grün*/ 
+						}
+						
+
+p.list-level3-triangle 		 	
+{ 
+						margin: 0px;
+		               	text-indent:-0.68em;             
+				       	margin-left:1.15em;
+						}
+						
+/*------------------------------ enumeration -----------------------------*/						
+						
+li.enumeration			{
+						margin: 0px 2px 0px 2px;
+						padding: 1px 0px 0px 0px;
+						text-align:left;
+						}
+					
+/*------------------------------Image Definitions-----------------------------*/	              
+
+
+
+div.image				{
+						width:100%;
+						margin-top: 5px;
+						margin-bottom: 7px;
+						margin-left: 1px; 
+						padding: -1px;
+						border:0px solid #a6003a;
+						color:#58585a; /* gray 80% */
+						}
+						
+
+
+@media screen and (max-height: 568px){
+						
+						 Div.image img
+						 {
+							max-width:310px;
+						 }
+						}
+	
+@media screen and (max-height: 310px){
+						
+						 Div.image img
+						 {
+							max-width:555px;
+						 }
+						}
+	
+
+@media screen and (max-width: 448px){
+						
+						 Div.image img
+						 {
+							max-width:437px;
+						 }
+						}
+
+
+
+@media screen and (max-width: 320px){
+						
+						 Div.image img
+						 {
+							max-width:310px;
+						 }
+						}
+										
+
+/*------------------Table regular----------------------*/
+
+table.table				{
+ 						width: 100%;
+						table-layout:fixed;
+						border-top:1px solid #bfbfbf;  /* gray 25% */
+ 						border-collapse:collapse;
+						margin:8px 0px 8px 1px;
+						}
+
+table.table	+ table.table	
+						{
+ 						margin-top: 15px;
+						}					
+
+
+table.table	td 			{
+						vertical-align:top;
+						}
+						
+						
+td.td					{
+						background-color:#E1E1E1; /*light gray #ee7f00 orange*/
+						color:#58585a;
+						padding:5px 2px 5px 2px;
+						}
+						
+td.td-white				{
+						background-color:#FFFFFF; /*#ee7f00 orange*/
+						color:#58585a;
+						padding:5px 2px 5px 2px;
+						}
+												
+td.td-gray				{
+						background-color:#F9F9F9; /*#ee7f00 orange*/
+						color:#58585a;
+						padding:5px 2px 5px 2px;
+						}	
+
+/*------------------Table Vorhofflimmern----------------------*/	
+						
+td.table-head-vorhoff		{
+					 	background-color:#bb3cad; /*#ee7f00 orange*/
+						/*border:0px solid #999;  has to be added as the table head should have "no" gray border */
+						border-left:1px solid #A2A3A8;
+						padding:5px 2px 5px 2px;
+						}
+						
+p.table-header-vorhoff 			{
+						color:#ffffff;
+						font-weight:bold;
+						font-size:16px;
+						line-height:18px;
+						word-spacing:1px;
+						letter-spacing:-0.5px;
+						margin: 3px 2px 0px 2px;
+						text-align:left;
+						}
+						
+td.td-vorhoff			{
+						background-color:#e1a2da; /*#ee7f00 orange*/
+						} 
+						
+td.td-light-vorhoff		
+						{
+						background-color:#f5dff2;
+						font-weight:normal;
+						text-align:left;
+						padding:5px 2px 5px 2px;
+						}
+						
+td.td-middle-vorhoff
+						{
+						background-color:#ebc0e6;
+						font-weight:normal;
+						padding:5px 2px 5px 2px;
+						}
+
+
+/*------------------Table pregn----------------------*/
+
+p.table-header-pregn 	{
+				font-size:17px;
+				font-weight:bolder;
+				color:#ffffff;
+				}
+
+td.pregn 	{
+				padding:5px 2px 5px 2px;
+				background-color: #97B8D9;
+				}
+
+td.pregn2 	{
+				background-color: #C8D9E9;
+				font-weight:bolder;
+				padding:2px 1px 2px 1px;		/*--because of hyphenation--*/
+				}
+				
+td.pregn3 	{
+				padding:5px 2px 5px 2px;
+				background-color: #DDE8F0;
+				}
+				
+.fontcolor-pregn		{
+				color:#97B8D9;
+				font-weight:bolder;
+				}	
+/*------------------Table Device----------------------*/				
+td.td-device 	{
+				padding:5px 2px 5px 2px;
+				background-color: #9E8C5F;
+				}
+				
+td.device2 	{
+				background-color: #dcd0b5;
+				font-weight:bolder;
+				padding:2px 1px 2px 1px;		/*--because of hyphenation--*/
+				}
+				
+p.table-header-device 	{
+				font-size:17px;
+				font-weight:bolder;
+				color:#ffffff;
+				}	
+				
+							
+/*------------------end----------------------*/									
+																
+td + td					{
+						/*background-color:#fde4d0; #ee7f00 orange*/
+						border-left: 1px solid #bfbfbf;
+						}
+
+
+tr + tr					{
+						border-bottom:1px solid #bfbfbf; 
+						}
+
+tr						{
+						border-bottom:1px solid #bfbfbf;
+						}						
+						
+td.table-head			{
+					 	background-color:#92B7D7; /*#ee7f00 orange*/
+						border-bottom:1px solid #bfbfbf; /* has to be added as the table head should have "no" gray border */
+						padding: 5px 0px 5px 0px;
+						}
+
+
+p.table-header 			{
+						color: #000000;
+						font-weight:bolder;
+						font-size:16px;
+						line-height:18px;
+						word-spacing:1px;
+						letter-spacing:-0.5px;
+						margin: 3px 2px 0px 2px;
+						text-align:left;
+						}
+						
+						
+p.tablecontent			{
+						color:#3E3D40; /* gray 90% */
+ 						font-family:Helvetica;
+						font-size:17px;
+						line-height:18px;
+						}
+
+td.nopadding
+						{
+				       	padding:4px 1px 4px 1px;
+						}
+
+
+
+
+/*------------------Table td's colour----------------------*/
+
+
+td.white-nonbold
+						{
+						background-color:#ffffff;
+						text-align:center;
+						vertical-align:middle;
+						padding:5px 2px 5px 2px;
+						}
+
+td.green-1
+						{
+						background-color:#eedf41;
+						font-weight:bold;
+						text-align:center;
+						padding:5px 2px 5px 2px;
+						}
+
+td.green-2
+						{
+						background-color:#f3e87d;
+						font-weight:bold;
+						padding:5px 2px 5px 2px;
+						}
+
+td.green-3
+						{
+						background-color:#fcf9e7;
+						padding:5px 2px 5px 2px;
+						}
+
+td.green-3-nonbold
+						{
+						background-color:#fcf9e7;
+						text-align:center;
+						vertical-align:middle;
+						padding:5px 2px 5px 2px;
+						}
+
+td.yellow
+						{
+						background-color:#FDF26F;
+						text-align:center;
+						vertical-align:middle;
+						padding:5px 2px 5px 2px;
+						}
+
+td.lightgreen
+						{
+						background-color:#E3EDDA;
+						text-align:center;
+						vertical-align:middle;
+						padding:5px 2px 5px 2px;
+						}	
+						
+td.red-nonbold
+						{
+						background-color:#FE513E;
+						text-align:center;
+						vertical-align:middle;
+						padding:5px 2px 5px 2px;
+						}
+						
+td.orange-nonbold
+						{
+						background-color:#FFB036;
+						text-align:center;
+						vertical-align:middle;
+						padding:5px 2px 5px 2px;
+						}
+						
+td.green-nonbold
+						{
+						background-color:#7fc173;
+						text-align:center;
+						vertical-align:middle;
+						padding:5px 2px 5px 2px;
+						}
+td.nst-acs /*green previous class-11*/
+						{ 						
+						background-color:#9BC38E; 
+						font-weight:bold;
+						text-align:center-left;
+						border-bottom: 3px solid #67A959;
+						vertical-align:middle;
+						padding:5px 2px 5px 2px;
+						}
+td.nst-acs-light /*green previous class-12*/
+						{ 						
+						background-color:#CADFC2; 
+						font-weight:normal;
+						text-align:center-left;
+						border-bottom: 1px solid #bfbfbf;
+						vertical-align:middle;
+						padding:5px 2px 5px 2px;
+						}
+						
+td.nst-acs-verylight /*green previous class-13*/
+						{ 						
+						background-color:#DCEAD8; /*73B767*/
+						font-weight:normal;
+						text-align:center-left;
+						border-bottom: 1px solid #bfbfbf;
+						vertical-align:middle;
+						padding:5px 2px 5px 2px;
+						}	
+
+td.green1-nonbold
+						{						
+						background-color:#9BC38E; 
+						text-align:center-left;
+						border-bottom: 3px solid #67A959;
+						vertical-align:middle;
+						padding:5px 2px 5px 2px;
+						}
+
+td.green2-nonbold /*green*/
+						{
+						background-color:#CADFC2; /*73B767*/
+						text-align:center-left;
+						border-bottom: 1px solid #bfbfbf;
+						vertical-align:middle;
+						padding:5px 2px 5px 2px;
+						}	
+						
+td.green3-nonbold
+						{
+						background-color:#DCEAD8; /*73B767*/
+						text-align:center-left;
+						border-bottom: 1px solid #bfbfbf;
+						vertical-align:middle;
+						padding:5px 2px 5px 2px;
+						}					
+/*------------------Table diagonal lines pattern----------------------*/
+
+td.diagonal_lines_pattern 
+
+{
+	background-image: -webkit-gradient(linear, left bottom, right top, color-stop(0, #ccc), color-stop(0.25, #ccc), color-stop(0.25, #bbb), color-stop(0.5, #bbb), color-stop(0.5, #ccc), color-stop(0.75, #ccc), color-stop(0.75, #bbb));
+	background-image: -webkit-linear-gradient(left bottom, #ccc 0%, #ccc 25%, #bbb 25%, #bbb 50%, #ccc 50%, #ccc 75%, #bbb 75%);
+	background-image: -moz-linear-gradient(left bottom, #ccc 0%, #ccc 25%, #bbb 25%, #bbb 50%, #ccc 50%, #ccc 75%, #bbb 75%);
+	background-image: -ms-linear-gradient(left bottom, #ccc 0%, #ccc 25%, #bbb 25%, #bbb 50%, #ccc 50%, #ccc 75%, #bbb 75%);
+	background-image: -o-linear-gradient(left bottom, #ccc 0%, #ccc 25%, #bbb 25%, #bbb 50%, #ccc 50%, #ccc 75%, #bbb 75%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', endColorstr='#bbbbbb',GradientType=0 ); / IE6-8 */
+	background-image: linear-gradient(left bottom, #ccc 0%, #ccc 25%, #bbb 25%, #bbb 50%, #ccc 50%, #ccc 75%, #bbb 75%);
+	background-size: 30px 30px;
+	width:100%;
+	height:100%;
+}
+						
+/*--------------------- Level of Evidens -------------*/	
+td.level-A /*darkblue*/
+{
+						background-color:#4E80BC;
+						color:#ffffff;
+						font-weight:bold;
+						text-align:center;
+						vertical-align:middle;
+						padding:5px 2px 5px 2px;
+					 	}
+						
+td.level-B /*blue*/
+{
+						background-color:#87A1CF;
+						color:#ffffff;
+						font-weight:bold;
+						text-align:center;
+						vertical-align:middle;
+						padding:5px 2px 5px 2px;
+						}
+						
+td.level-C /*lightpurple*/
+{
+						background-color:#B7C4E2; /*8D77AA*/
+						color:#ffffff;
+						font-weight:bold;
+						text-align:center;
+						vertical-align:middle;
+						padding:5px 2px 5px 2px;
+						}
+						
+
+	
+/*--------------------Grade of recommendation-----------------------*/
+
+
+td.class-1 /*green*/
+{ 						
+						background-color:#7fc173; /*73B767*/
+						font-weight:bold;
+						text-align:center;
+						vertical-align:middle;
+						padding:5px 2px 5px 2px;
+						}
+
+
+td.class-2 /*orange*/
+{
+						background-color:#FFB036;
+						font-weight:bold;
+						text-align:center;
+						vertical-align:middle;
+						padding:5px 2px 5px 2px;
+						}
+
+
+td.class-3 /*red*/
+{
+						background-color:#FE513E;
+						font-weight:bold;
+						text-align:center;
+						vertical-align:middle;
+						padding:5px 2px 5px 2px;
+						}
+						
+						
+/*--------------------Konsens-----------------------*/
+
+td.konsens-strong 
+						{						
+						background-color:#CADB2A; 
+						font-weight:normal;
+						color:#000;
+						text-align:left;
+						vertical-align:middle;
+						padding:2px 2px 2px 2px;
+						}
+						 
+td.konsens 
+						{ 						
+						background-color:#D7E267; 
+						font-weight:normal;
+						color:#000;
+						text-align:left;
+						vertical-align:middle;
+						padding:2px 2px 2px 2px;
+						}	
+						
+td.konsens-middle 
+						{
+						background-color:#E1E991;
+						color:#000;
+						font-weight:normal;
+						text-align:left;
+						vertical-align:middle;
+						padding:2px 0px 2px 0px;
+						}
+
+
+td.konsens-none 
+						{
+						background-color:#FBF0B8;
+						color:#000;
+						font-weight:normal;
+						text-align:left;
+						vertical-align:middle;
+						padding:2px 2px 2px 2px;
+						}
+						
+
+/*--------------------- different table backgrounds according to guideline main color -------------*/
+
+td.white
+						{
+						background-color:#ffffff;
+						font-weight:normal;
+						text-align:left;
+						vertical-align:middle;
+						}
+
+
+/*--------------------table layout b used for Abrevations---------------------*/
+
+
+table.table-layout-b	{
+ 						width: 100%;
+						table-layout:auto;
+ 						border-collapse:collapse;
+						margin:5px 0px 5px 1px;
+						}
+
+
+
+/*--------------------td abbrevations---------------------*/
+
+td.abrevation
+						{
+						background-color:#ffffff;
+						border-bottom:1px solid #bfbfbf;
+						font-weight:normal;
+						text-align:left;
+						vertical-align:middle;
+						padding: 2px 2px 2px 2px;
+						}
+						
+td.abrevation-bg
+						{
+						background-color:#CCC;
+						font-weight:normal;
+						text-align:left;
+						vertical-align:middle;
+						padding: 2px 2px 2px 2px;
+						}
+
+/*--------------------div boxes used for reference, conent, konsens---------------------*/
+
+
+						
+div.box					{
+						background: #f5f5f5;
+						border: 1px solid #FFF;
+						padding: 2px 2px 2px 2px;
+						margin: 7px 1px 13px 5px;
+						border-radius: 5px;
+						-moz-border-radius: 5px;
+						-webkit-border-radius: 5px;
+						box-shadow: 1px 2px 4px rgba(0,0,0,.4);
+						}
+
+div.box-link			{
+						background: #F18832;
+						font-weight:400;
+						color:#FFFFFF;
+						border: 1px solid #F2942D;
+						float: right;
+						padding: 2px 2px 2px 2px;
+						margin: 7px 1px 13px 5px;
+						border-radius: 5px;
+						-moz-border-radius: 5px;
+						-webkit-border-radius: 5px;
+						box-shadow: 1px 2px 4px rgba(0,0,0,.4);
+						}						
+
+div.floatstop			{
+						clear:both;
+						}
+						
+div.box-blue			{
+						background: #C0DEF3;
+						border: 1px solid #C0DEF3;
+						padding: 6px 5px 6px 5px;
+						margin: 7px 5px 13px 5px;
+						border-radius: 5px;
+						-moz-border-radius: 5px;
+						-webkit-border-radius: 5px;
+						box-shadow: 1px 2px 4px rgba(0,0,0,.4);
+						}
+						
+div.box-konsens			{
+						background-color:#FBFF95;
+						color:#000;
+						font-weight: normal;
+						text-align:left;
+						vertical-align:middle;
+						border: 1px solid #FBFF95;
+						padding: 6px 5px 6px 5px;
+						margin: 7px 5px 13px 5px;
+						border-radius: 5px;
+						-moz-border-radius: 5px;
+						-webkit-border-radius: 5px;
+						box-shadow: 1px 2px 4px rgba(0,0,0,.4);
+						}
+
+
+/*--------------------div boxes - definition, attention, example---------------------*/
+
+div.box-example			{
+						background-color:#DDDCDE;
+						color:#000;
+						font-weight: normal;
+						text-align:left;
+						vertical-align:middle;
+						border: 1px solid #A2A3A8;
+						padding: 6px 5px 6px 5px;
+						margin: 7px 5px 13px 5px;
+						border-radius: 5px;
+						-moz-border-radius: 5px;
+						-webkit-border-radius: 5px;
+						box-shadow: 1px 2px 4px rgba(0,0,0,.4);
+						}
+						
+div.box-definition		{
+						background-color:#92B7D7;
+						color:#000;
+						font-weight: normal;
+						text-align:left;
+						vertical-align:middle;
+						border: 1px solid #7387B0;
+						padding: 6px 5px 6px 5px;
+						margin: 7px 5px 13px 5px;
+						border-radius: 5px;
+						-moz-border-radius: 5px;
+						-webkit-border-radius: 5px;
+						box-shadow: 1px 2px 4px rgba(0,0,0,.4);
+						}
+						
+div.box-attention		{
+						background-color:#FDC82F;
+						color:#000;
+						font-weight: normal;
+						text-align:left;
+						vertical-align:middle;
+						border: 1px solid #FDB94C;
+						padding: 6px 5px 6px 5px;
+						margin: 7px 5px 13px 5px;
+						border-radius: 5px;
+						-moz-border-radius: 5px;
+						-webkit-border-radius: 5px;
+						box-shadow: 1px 2px 4px rgba(0,0,0,.4);
+						}	
+						
+div.green-box			
+						{ 
+						border: 2px solid #EEE041; /*D6D825*/
+						background-color:#FBF7D6; /*ECEFC2*/
+						padding: 10px 6px 6px 6px;
+						margin-bottom: 10px;
+						text-align:center;
+						}
+						
+div.hyp-comment			{
+						background:-moz-linear-gradient(bottom,#ED6BA6,#ffffff); /* Firefox */
+						background:-webkit-gradient(linear,left top,left bottom,from(#ffffff),to(#ED6BA6)); /* Chrome, Safari */
+						filter: progid:DXImageTransform.Microsoft.gradient(start
+						Colorstr='#ffffff',endColorstr='#ED6BA6'); /* Internet Explorer */
+						padding: 2px 2px 2px 2px;
+						margin: 7px 1px 13px 5px;+
+						border-radius: 5px;
+						-moz-border-radius: 5px;
+						-webkit-border-radius: 5px;
+						box-shadow: 1px 2px 4px rgba(0,0,0,.4);
+						} 											
+/*-----------------------Link definition of Abbrevations at Content------------------------*/
+	
+.abbreviation-link		{
+						font-style: italic;
+						color:#30C;
+						}
+						
+a.abbreviation:link		{
+						text-decoration:underline;
+						/*font-weight:bold;*/
+						font-style: italic;
+						color:#30C;
+
+						}
+												
+
+						
+a.abbreviation:hover	{
+						color:#30C;		/*color:#006d75; <a class="abbreviation" href="abbr_ESC">ESC</a> green*/
+						font-weight:bold;
+						font-style: italic;
+						text-decoration:none;
+						}			
+
+
+					

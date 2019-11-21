@@ -14,7 +14,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void navigationPage() {
-    Navigator.of(context).pushReplacementNamed('/Home');
+    Navigator.of(context).pushReplacementNamed('/App');
   }
 
   @override

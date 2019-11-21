@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_stack_overflow/features/content/content_view.dart';
 import 'package:flutter_app_stack_overflow/features/toc/toc.dart';
@@ -13,7 +14,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[100],
+      backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: StaggeredGridView.count(
@@ -35,11 +36,11 @@ class _HomeScreenState extends State<HomeScreen> {
           children: <Widget>[
             InkWell(
               onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder:(context)=>ContentView()));
+                Navigator.of(context).push(PageRouteBuilder(opaque: false, pageBuilder: (BuildContext context, _, __) => ContentView()));
               },
               child: Container(
                 color: Colors.grey,
-                height: 150,
+                height: 120,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Center(
@@ -56,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             Container(
               color: Colors.grey,
-              height: 150,
+              height: 120,
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Center(
@@ -72,7 +73,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             Container(
               color: Colors.grey,
-              height: 150,
+              height: 120,
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Center(
@@ -88,7 +89,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             Container(
               color: Colors.grey,
-              height: 150,
+              height: 120,
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Center(
@@ -101,6 +102,25 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
+            ),
+            CarouselSlider(
+              height: 90.0,
+              autoPlay: true,
+              autoPlayInterval: Duration(seconds: 2),
+              items: [1,2,3,].map((i) {
+                return Builder(
+                  builder: (BuildContext context) {
+                    return Container(
+                        width: MediaQuery.of(context).size.width,
+                        margin: EdgeInsets.symmetric(horizontal: 5.0),
+                        decoration: BoxDecoration(
+                            color: Colors.grey[300]
+                        ),
+                        child: Center(child: Text('Sponsor $i', style: TextStyle(fontSize: 16.0),))
+                    );
+                  },
+                );
+              }).toList(),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

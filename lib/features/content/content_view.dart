@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_app_stack_overflow/features/bottombar/bottom_bar.dart';
 import 'package:flutter_app_stack_overflow/features/content/custom_app_bar.dart';
@@ -8,6 +10,8 @@ import 'package:flutter_app_stack_overflow/features/library/library.dart';
 import 'package:flutter_app_stack_overflow/features/notes_bookmakrs/notes_bookmakrs.dart';
 import 'package:flutter_app_stack_overflow/features/search/search.dart';
 import 'package:flutter_app_stack_overflow/features/toc/toc.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:screenshot/screenshot.dart';
 
 class ContentView extends StatefulWidget {
   @override
@@ -16,6 +20,7 @@ class ContentView extends StatefulWidget {
 
 class _ContentViewState extends State<ContentView> {
   bool _showNaviAndBottomBar = true;
+  ScreenshotController screenshotController=ScreenshotController();
 
   @override
   Widget build(BuildContext context) {
@@ -38,23 +43,26 @@ class _ContentViewState extends State<ContentView> {
         ),
         body: PageView(
             children: <Widget>[
-              Container(
-                margin: _showNaviAndBottomBar
-                    ? const EdgeInsets.only(
-                        top: 20.0, left: 10.0, right: 10.0, bottom: 20.0)
-                    : EdgeInsets.all(5.0),
-                decoration: _showNaviAndBottomBar
-                    ? BoxDecoration(
-                        border: Border.all(color: Colors.blueAccent),
-                        color: Colors.white)
-                    : BoxDecoration(
-                        border: Border.all(color: Colors.transparent),
-                        color: Colors.white),
-                child: GestureDetector(
-                    onTap: () {
-                      _hideBars();
-                    },
-                    child: HtmlView('assets/content/DEPH105_8.4.2.0.html')),
+              Screenshot(
+                controller: screenshotController,
+                child: Container(
+                  margin: _showNaviAndBottomBar
+                      ? const EdgeInsets.only(
+                          top: 20.0, left: 10.0, right: 10.0, bottom: 20.0)
+                      : EdgeInsets.all(5.0),
+                  decoration: _showNaviAndBottomBar
+                      ? BoxDecoration(
+                          border: Border.all(color: Colors.blueAccent),
+                          color: Colors.white)
+                      : BoxDecoration(
+                          border: Border.all(color: Colors.transparent),
+                          color: Colors.white),
+                  child: GestureDetector(
+                      onTap: () {
+                        _hideBars();
+                      },
+                      child: HtmlView('assets/content/DEPH105_8.4.2.0.html')),
+                ),
               ),
               Container(
                 margin: _showNaviAndBottomBar
@@ -96,5 +104,17 @@ class _ContentViewState extends State<ContentView> {
               initialPage: 0,
             )),
        );
+  }
+
+  void _captureTabChanges() async {
+    final directory = (await getApplicationDocumentsDirectory())
+        .path; //from path_provide package
+    String fileName = DateTime.now().toIso8601String();
+    String path = '$directory/$fileName.png';
+    screenshotController.capture(path: path).then((File image) {
+      print(path);
+    }).catchError((onError) {
+      print(onError);
+    });
   }
 }

@@ -16,10 +16,10 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.only(top:5.0,left:16.0,right: 16.0),
         child: StaggeredGridView.count(
           crossAxisCount: 4,
-          crossAxisSpacing: 10.0,
+          crossAxisSpacing: 0.0,
           mainAxisSpacing: 10.0,
           staggeredTiles: [
             StaggeredTile.fit(1),
@@ -32,73 +32,122 @@ class _HomeScreenState extends State<HomeScreen> {
             StaggeredTile.fit(4),
             StaggeredTile.fit(4),
             StaggeredTile.fit(4),
+            StaggeredTile.fit(4),
           ],
           children: <Widget>[
             InkWell(
               onTap: (){
                 Navigator.of(context).push(PageRouteBuilder(opaque: false, pageBuilder: (BuildContext context, _, __) => ContentView()));
               },
-              child: Container(
-                color: Colors.grey,
-                height: 120,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Center(
-                    child: Text(
-                      'Most used chapter 1',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16),
+              child: Card(
+                elevation: 4,
+                child: Container(
+                  color: Colors.grey[100],
+                  height: 110,
+                  child: Padding(
+                    padding: const EdgeInsets.all(0.0),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: <Widget>[
+                        Card( elevation: 5,shape: CircleBorder(), child: CircleAvatar(maxRadius:25,backgroundColor: Color(0xff3c70a4),child: Text('C',style: TextStyle(fontSize:20,fontWeight: FontWeight.bold,color: Colors.white),),)),
+                        Padding(
+                          padding: const EdgeInsets.only(left:5.0),
+                          child: Text(
+                            'Most used chapter 1',
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                                color: Colors.black54,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 12),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
               ),
             ),
-            Container(
-              color: Colors.grey,
-              height: 120,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Center(
-                  child: Text(
-                    'Most used chapter 2',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16),
+            Card(
+              elevation: 4,
+              child: Container(
+                color: Colors.grey[100],
+                height: 110,
+                child: Padding(
+                  padding: const EdgeInsets.all(0.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      Card( elevation: 5,shape: CircleBorder(), child: CircleAvatar(maxRadius:25,backgroundColor: Color(0xff3c70a4),child: Text('C',style: TextStyle(fontSize:20,fontWeight: FontWeight.bold,color: Colors.white),),)),
+                      Padding(
+                        padding: const EdgeInsets.only(left:5.0),
+                        child: Text(
+                          'Most used chapter 1',
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                              color: Colors.black54,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 12),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
             ),
-            Container(
-              color: Colors.grey,
-              height: 120,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Center(
-                  child: Text(
-                    'Most used tool 1',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16),
+            Card(
+              elevation: 4,
+              child: Container(
+                color: Colors.grey[100],
+                height: 110,
+                child: Padding(
+                  padding: const EdgeInsets.all(0.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      Card( elevation: 5,shape: CircleBorder(), child: CircleAvatar(maxRadius:25,backgroundColor: Color(0xff00909e),child: Text('T',style: TextStyle(fontSize:20,fontWeight: FontWeight.bold,color: Colors.white),),)),
+                      Padding(
+                        padding: const EdgeInsets.only(left:5.0),
+                        child: Text(
+                          'Most used Tool 1',
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                              color: Colors.black54,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 12),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
             ),
-            Container(
-              color: Colors.grey,
-              height: 120,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Center(
-                  child: Text(
-                    'Most used tool 2',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16),
+            Card(
+              elevation: 4,
+              child: Container(
+                color: Colors.grey[100],
+                height: 110,
+                child: Padding(
+                  padding: const EdgeInsets.all(0.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      Card( elevation: 5,shape: CircleBorder(), child: CircleAvatar(maxRadius:25,backgroundColor: Color(0xff00909e),child: Text('T',style: TextStyle(fontSize:20,fontWeight: FontWeight.bold,color: Colors.white),),)),
+                      Padding(
+                        padding: const EdgeInsets.only(left:5.0),
+                        child: Text(
+                          'Most used Tool 2',
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                              color: Colors.black54,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 12),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -106,17 +155,23 @@ class _HomeScreenState extends State<HomeScreen> {
             CarouselSlider(
               height: 90.0,
               autoPlay: true,
-              autoPlayInterval: Duration(seconds: 2),
+              autoPlayInterval: Duration(seconds: 3),
               items: [1,2,3,].map((i) {
                 return Builder(
                   builder: (BuildContext context) {
-                    return Container(
-                        width: MediaQuery.of(context).size.width,
-                        margin: EdgeInsets.symmetric(horizontal: 5.0),
-                        decoration: BoxDecoration(
-                            color: Colors.grey[300]
+                    return Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Material(
+                        elevation: 4,
+                        child: Container(
+                            width: MediaQuery.of(context).size.width,
+
+                            decoration: BoxDecoration(
+                                color: Colors.grey[100]
+                            ),
+                            child: Center(child: Text('Sponsor $i', style: TextStyle(fontSize: 16.0),))
                         ),
-                        child: Center(child: Text('Sponsor $i', style: TextStyle(fontSize: 16.0),))
+                      ),
                     );
                   },
                 );
@@ -145,16 +200,23 @@ class _HomeScreenState extends State<HomeScreen> {
                   Padding(
                     padding: const EdgeInsets.only(
                         top: 8.0, bottom: 8.0, right: 8.0),
-                    child: Container(
-                      width: 160.0,
-                      color: Colors.red,
-                      child: Center(
-                        child: Text(
-                          'Guideline 1',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20),
+                    child: Card(
+                      elevation:3,
+                      child: Container(
+                        width: 130.0,
+                        color: Colors.grey[100],
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: <Widget>[
+                            Card( elevation: 5,shape: CircleBorder(), child: CircleAvatar(maxRadius:35,backgroundColor: Colors.blueAccent,child: Text('G',style: TextStyle(fontSize:20,fontWeight: FontWeight.bold,color: Colors.white),),)),
+                            Text(
+                              'Guideline 1',
+                              style: TextStyle(
+                                  color: Colors.black54,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14),
+                            ),
+                          ],
                         ),
                       ),
                     ),
@@ -162,16 +224,23 @@ class _HomeScreenState extends State<HomeScreen> {
                   Padding(
                     padding: const EdgeInsets.only(
                         top: 8.0, bottom: 8.0, right: 8.0),
-                    child: Container(
-                      width: 160.0,
-                      color: Colors.blue,
-                      child: Center(
-                        child: Text(
-                          'Guideline 2',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20),
+                    child: Card(
+                      elevation:3,
+                      child: Container(
+                        width: 130.0,
+                        color: Colors.grey[100],
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: <Widget>[
+                            Card( elevation: 5,shape: CircleBorder(), child: CircleAvatar(maxRadius:35,backgroundColor: Colors.blueAccent,child: Text('G',style: TextStyle(fontSize:20,fontWeight: FontWeight.bold,color: Colors.white),),)),
+                            Text(
+                              'Guideline 2',
+                              style: TextStyle(
+                                  color: Colors.black54,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14),
+                            ),
+                          ],
                         ),
                       ),
                     ),
@@ -179,16 +248,23 @@ class _HomeScreenState extends State<HomeScreen> {
                   Padding(
                     padding: const EdgeInsets.only(
                         top: 8.0, bottom: 8.0, right: 8.0),
-                    child: Container(
-                      width: 160.0,
-                      color: Colors.green,
-                      child: Center(
-                        child: Text(
-                          'Guideline 3',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20),
+                    child: Card(
+                      elevation:3,
+                      child: Container(
+                        width: 130.0,
+                        color: Colors.grey[100],
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: <Widget>[
+                            Card( elevation: 5,shape: CircleBorder(), child: CircleAvatar(maxRadius:35,backgroundColor: Colors.blueAccent,child: Text('G',style: TextStyle(fontSize:20,fontWeight: FontWeight.bold,color: Colors.white),),)),
+                            Text(
+                              'Guideline 3',
+                              style: TextStyle(
+                                  color: Colors.black54,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14),
+                            ),
+                          ],
                         ),
                       ),
                     ),
@@ -196,16 +272,23 @@ class _HomeScreenState extends State<HomeScreen> {
                   Padding(
                     padding: const EdgeInsets.only(
                         top: 8.0, bottom: 8.0, right: 8.0),
-                    child: Container(
-                      width: 160.0,
-                      color: Colors.yellow,
-                      child: Center(
-                        child: Text(
-                          'Guideline 4',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20),
+                    child: Card(
+                      elevation:3,
+                      child: Container(
+                        width: 130.0,
+                        color: Colors.grey[100],
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: <Widget>[
+                            Card( elevation: 5,shape: CircleBorder(), child: CircleAvatar(maxRadius:35,backgroundColor: Colors.blueAccent,child: Text('G',style: TextStyle(fontSize:20,fontWeight: FontWeight.bold,color: Colors.white),),)),
+                            Text(
+                              'Guideline 4',
+                              style: TextStyle(
+                                  color: Colors.black54,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14),
+                            ),
+                          ],
                         ),
                       ),
                     ),
@@ -213,16 +296,23 @@ class _HomeScreenState extends State<HomeScreen> {
                   Padding(
                     padding: const EdgeInsets.only(
                         top: 8.0, bottom: 8.0, right: 8.0),
-                    child: Container(
-                      width: 160.0,
-                      color: Colors.orange,
-                      child: Center(
-                        child: Text(
-                          'Guideline 5',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20),
+                    child: Card(
+                      elevation:3,
+                      child: Container(
+                        width: 130.0,
+                        color: Colors.grey[100],
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: <Widget>[
+                            Card( elevation: 5,shape: CircleBorder(), child: CircleAvatar(maxRadius:35,backgroundColor: Colors.blueAccent,child: Text('G',style: TextStyle(fontSize:20,fontWeight: FontWeight.bold,color: Colors.white),),)),
+                            Text(
+                              'Guideline 5',
+                              style: TextStyle(
+                                  color: Colors.black54,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14),
+                            ),
+                          ],
                         ),
                       ),
                     ),
@@ -253,16 +343,23 @@ class _HomeScreenState extends State<HomeScreen> {
                   Padding(
                     padding: const EdgeInsets.only(
                         top: 8.0, bottom: 8.0, right: 8.0),
-                    child: Container(
-                      width: 160.0,
-                      color: Colors.red,
-                      child: Center(
-                        child: Text(
-                          'CDS Tool 1',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20),
+                    child: Card(
+                      elevation:3,
+                      child: Container(
+                        width: 130.0,
+                        color: Colors.grey[100],
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: <Widget>[
+                            Card( elevation: 5,shape: CircleBorder(), child: CircleAvatar(maxRadius:35,backgroundColor: Colors.blueGrey,child: Text('CDS',style: TextStyle(fontSize:20,fontWeight: FontWeight.bold,color: Colors.white),),)),
+                            Text(
+                              'Tool 1',
+                              style: TextStyle(
+                                  color: Colors.black54,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14),
+                            ),
+                          ],
                         ),
                       ),
                     ),
@@ -270,16 +367,23 @@ class _HomeScreenState extends State<HomeScreen> {
                   Padding(
                     padding: const EdgeInsets.only(
                         top: 8.0, bottom: 8.0, right: 8.0),
-                    child: Container(
-                      width: 160.0,
-                      color: Colors.blue,
-                      child: Center(
-                        child: Text(
-                          'CDS Tool 2',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20),
+                    child: Card(
+                      elevation:3,
+                      child: Container(
+                        width: 130.0,
+                        color: Colors.grey[100],
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: <Widget>[
+                            Card( elevation: 5,shape: CircleBorder(), child: CircleAvatar(maxRadius:35,backgroundColor: Colors.blueGrey,child: Text('CDS',style: TextStyle(fontSize:20,fontWeight: FontWeight.bold,color: Colors.white),),)),
+                            Text(
+                              'Tool 2',
+                              style: TextStyle(
+                                  color: Colors.black54,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14),
+                            ),
+                          ],
                         ),
                       ),
                     ),
@@ -287,16 +391,23 @@ class _HomeScreenState extends State<HomeScreen> {
                   Padding(
                     padding: const EdgeInsets.only(
                         top: 8.0, bottom: 8.0, right: 8.0),
-                    child: Container(
-                      width: 160.0,
-                      color: Colors.green,
-                      child: Center(
-                        child: Text(
-                          'CDS Tool 3',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20),
+                    child: Card(
+                      elevation:3,
+                      child: Container(
+                        width: 130.0,
+                        color: Colors.grey[100],
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: <Widget>[
+                            Card( elevation: 5,shape: CircleBorder(), child: CircleAvatar(maxRadius:35,backgroundColor: Colors.blueGrey,child: Text('CDS',style: TextStyle(fontSize:20,fontWeight: FontWeight.bold,color: Colors.white),),)),
+                            Text(
+                              'Tool 3',
+                              style: TextStyle(
+                                  color: Colors.black54,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14),
+                            ),
+                          ],
                         ),
                       ),
                     ),
@@ -304,16 +415,23 @@ class _HomeScreenState extends State<HomeScreen> {
                   Padding(
                     padding: const EdgeInsets.only(
                         top: 8.0, bottom: 8.0, right: 8.0),
-                    child: Container(
-                      width: 160.0,
-                      color: Colors.yellow,
-                      child: Center(
-                        child: Text(
-                          'CDS Tool 4',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20),
+                    child: Card(
+                      elevation:3,
+                      child: Container(
+                        width: 130.0,
+                        color: Colors.grey[100],
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: <Widget>[
+                            Card( elevation: 5,shape: CircleBorder(), child: CircleAvatar(maxRadius:35,backgroundColor: Colors.blueGrey,child: Text('CDS',style: TextStyle(fontSize:20,fontWeight: FontWeight.bold,color: Colors.white),),)),
+                            Text(
+                              'Tool 4',
+                              style: TextStyle(
+                                  color: Colors.black54,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14),
+                            ),
+                          ],
                         ),
                       ),
                     ),
@@ -321,16 +439,23 @@ class _HomeScreenState extends State<HomeScreen> {
                   Padding(
                     padding: const EdgeInsets.only(
                         top: 8.0, bottom: 8.0, right: 8.0),
-                    child: Container(
-                      width: 160.0,
-                      color: Colors.orange,
-                      child: Center(
-                        child: Text(
-                          'CDS Tool 5',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20),
+                    child: Card(
+                      elevation:3,
+                      child: Container(
+                        width: 130.0,
+                        color: Colors.grey[100],
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: <Widget>[
+                            Card( elevation: 5,shape: CircleBorder(), child: CircleAvatar(maxRadius:35,backgroundColor: Colors.blueGrey,child: Text('CDS',style: TextStyle(fontSize:20,fontWeight: FontWeight.bold,color: Colors.white),),)),
+                            Text(
+                              'Tool 5',
+                              style: TextStyle(
+                                  color: Colors.black54,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14),
+                            ),
+                          ],
                         ),
                       ),
                     ),
@@ -361,16 +486,23 @@ class _HomeScreenState extends State<HomeScreen> {
                   Padding(
                     padding: const EdgeInsets.only(
                         top: 8.0, bottom: 8.0, right: 8.0),
-                    child: Container(
-                      width: 160.0,
-                      color: Colors.red,
-                      child: Center(
-                        child: Text(
-                          'Tool 1',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20),
+                    child: Card(
+                      elevation:3,
+                      child: Container(
+                        width: 130.0,
+                        color: Colors.grey[100],
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: <Widget>[
+                            Card( elevation: 5,shape: CircleBorder(), child: CircleAvatar(maxRadius:35,backgroundColor: Color(0xff00909e),child: Text('T',style: TextStyle(fontSize:20,fontWeight: FontWeight.bold,color: Colors.white),),)),
+                            Text(
+                              'Tool 1',
+                              style: TextStyle(
+                                  color: Colors.black54,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14),
+                            ),
+                          ],
                         ),
                       ),
                     ),
@@ -378,16 +510,23 @@ class _HomeScreenState extends State<HomeScreen> {
                   Padding(
                     padding: const EdgeInsets.only(
                         top: 8.0, bottom: 8.0, right: 8.0),
-                    child: Container(
-                      width: 160.0,
-                      color: Colors.blue,
-                      child: Center(
-                        child: Text(
-                          'Tool 2',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20),
+                    child: Card(
+                      elevation:3,
+                      child: Container(
+                        width: 130.0,
+                        color: Colors.grey[100],
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: <Widget>[
+                            Card( elevation: 5,shape: CircleBorder(), child: CircleAvatar(maxRadius:35,backgroundColor: Color(0xff00909e),child: Text('T',style: TextStyle(fontSize:20,fontWeight: FontWeight.bold,color: Colors.white),),)),
+                            Text(
+                              'Tool 2',
+                              style: TextStyle(
+                                  color: Colors.black54,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14),
+                            ),
+                          ],
                         ),
                       ),
                     ),
@@ -395,16 +534,23 @@ class _HomeScreenState extends State<HomeScreen> {
                   Padding(
                     padding: const EdgeInsets.only(
                         top: 8.0, bottom: 8.0, right: 8.0),
-                    child: Container(
-                      width: 160.0,
-                      color: Colors.green,
-                      child: Center(
-                        child: Text(
-                          'Tool 3',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20),
+                    child: Card(
+                      elevation:3,
+                      child: Container(
+                        width: 130.0,
+                        color: Colors.grey[100],
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: <Widget>[
+                            Card( elevation: 5,shape: CircleBorder(), child: CircleAvatar(maxRadius:35,backgroundColor: Color(0xff00909e),child: Text('T',style: TextStyle(fontSize:20,fontWeight: FontWeight.bold,color: Colors.white),),)),
+                            Text(
+                              'Tool 3',
+                              style: TextStyle(
+                                  color: Colors.black54,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14),
+                            ),
+                          ],
                         ),
                       ),
                     ),
@@ -412,16 +558,23 @@ class _HomeScreenState extends State<HomeScreen> {
                   Padding(
                     padding: const EdgeInsets.only(
                         top: 8.0, bottom: 8.0, right: 8.0),
-                    child: Container(
-                      width: 160.0,
-                      color: Colors.yellow,
-                      child: Center(
-                        child: Text(
-                          'Tool 4',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20),
+                    child: Card(
+                      elevation:3,
+                      child: Container(
+                        width: 130.0,
+                        color: Colors.grey[100],
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: <Widget>[
+                            Card( elevation: 5,shape: CircleBorder(), child: CircleAvatar(maxRadius:35,backgroundColor: Color(0xff00909e),child: Text('T',style: TextStyle(fontSize:20,fontWeight: FontWeight.bold,color: Colors.white),),)),
+                            Text(
+                              'Tool 4',
+                              style: TextStyle(
+                                  color: Colors.black54,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14),
+                            ),
+                          ],
                         ),
                       ),
                     ),
@@ -429,16 +582,23 @@ class _HomeScreenState extends State<HomeScreen> {
                   Padding(
                     padding: const EdgeInsets.only(
                         top: 8.0, bottom: 8.0, right: 8.0),
-                    child: Container(
-                      width: 160.0,
-                      color: Colors.orange,
-                      child: Center(
-                        child: Text(
-                          'Tool 5',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20),
+                    child: Card(
+                      elevation:3,
+                      child: Container(
+                        width: 130.0,
+                        color: Colors.grey[100],
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: <Widget>[
+                            Card( elevation: 5,shape: CircleBorder(), child: CircleAvatar(maxRadius:35,backgroundColor: Color(0xff00909e),child: Text('T',style: TextStyle(fontSize:20,fontWeight: FontWeight.bold,color: Colors.white),),)),
+                            Text(
+                              'Tool 5',
+                              style: TextStyle(
+                                  color: Colors.black54,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14),
+                            ),
+                          ],
                         ),
                       ),
                     ),

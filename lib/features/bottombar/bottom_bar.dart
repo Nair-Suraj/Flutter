@@ -23,7 +23,7 @@ class _BottomBarState extends State<BottomBar> {
         this.widget.moduleIndex = index;
         switch (this.widget.moduleIndex) {
           case 0:
-            Navigator.of(context).push(PageRouteBuilder(opaque: false, pageBuilder: (BuildContext context, _, __) => Home()));
+//            Navigator.of(context).push(PageRouteBuilder(opaque: false, pageBuilder: (BuildContext context, _, __) => Home()));
             break;
           case 1:
             Navigator.of(context).push(PageRouteBuilder(opaque: false, pageBuilder: (BuildContext context, _, __) => Toc()));

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:path_provider/path_provider.dart';
 
 enum TabItem { home, toc, search, notes, library }
 
@@ -7,7 +8,7 @@ Map<TabItem, String> tabName = {
   TabItem.toc: 'Toc',
   TabItem.search: 'Search',
   TabItem.notes: 'Notes',
-  TabItem.library: 'Library'
+  TabItem.library: 'History'
 };
 
 Map<TabItem, IconData> tabIcons = {
@@ -23,6 +24,7 @@ class BottomNavigation extends StatelessWidget {
 
   final TabItem currentTab;
   final ValueChanged<TabItem> onSelectTab;
+
 
   @override
   Widget build(BuildContext context) {
@@ -58,6 +60,7 @@ class BottomNavigation extends StatelessWidget {
   }
 
   Color _colorTabMatching({TabItem item}) {
-    return currentTab == item ? Colors.green : Colors.grey;
+    return currentTab == item ? Color(0xff2c003e) :Colors.grey ;
   }
 }
+

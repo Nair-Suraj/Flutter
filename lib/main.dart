@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_app_stack_overflow/features/login_screen/login.dart';
 import 'package:flutter_app_stack_overflow/features/navigationbar/navigation_bar.dart';
 import 'package:flutter_app_stack_overflow/features/splash/splash.dart';
+import 'package:showcaseview/showcaseview.dart';
 
 import 'features/home_screen/home.dart';
 import 'features/routing/app.dart';
@@ -13,7 +14,9 @@ void main() {
   runApp(new MaterialApp(
     home: SplashScreen(),
     routes: <String, WidgetBuilder>{
-      '/App': (BuildContext context) => App(),
+      '/App': (BuildContext context) => ShowCaseWidget(
+            builder: Builder(builder: (context) => App()),
+          ),
       '/LoginScreen': (BuildContext context) => LoginScreen(),
     },
   ));

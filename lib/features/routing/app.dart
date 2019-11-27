@@ -5,17 +5,21 @@ import 'package:flutter_app_stack_overflow/features/routing/bottom_navigation.da
 import 'package:flutter_app_stack_overflow/features/routing/tab_navigator.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:screenshot/screenshot.dart';
+import 'package:showcaseview/showcase.dart';
+import 'package:showcaseview/showcase_widget.dart';
 
 class App extends StatefulWidget {
-
   @override
   _AppState createState() => _AppState();
 }
 
+
+
 class _AppState extends State<App> {
   TabItem _currentTab = TabItem.home;
 
-  ScreenshotController screenshotController=ScreenshotController();
+  ScreenshotController screenshotController = ScreenshotController();
+
   void _selectTab(TabItem tabItem) {
 //    _captureTabChanges();
     if (tabItem == _currentTab) {
@@ -47,7 +51,6 @@ class _AppState extends State<App> {
         }
         return isFirstRouteInCurrentTab;
       },
-
       child: Scaffold(
         body: Screenshot(
           controller: screenshotController,
@@ -61,23 +64,21 @@ class _AppState extends State<App> {
             ],
           ),
         ),
-
-        bottomNavigationBar:  BottomNavigation(
+        bottomNavigationBar: BottomNavigation(
           currentTab: _currentTab,
           onSelectTab: _selectTab,
         ),
       ),
-
-
     );
-
   }
 
-
-  Widget _buildOffStageNavigator(TabItem tabItem){
+  Widget _buildOffStageNavigator(TabItem tabItem) {
     return Offstage(
-      offstage: _currentTab !=tabItem,
-      child: TabNavigator(navigatorKey: _navigatorKeys[tabItem],tabItem: tabItem,),
+      offstage: _currentTab != tabItem,
+      child: TabNavigator(
+        navigatorKey: _navigatorKeys[tabItem],
+        tabItem: tabItem,
+      ),
     );
   }
 
@@ -86,11 +87,11 @@ class _AppState extends State<App> {
         .path; //from path_provide package
     String fileName = DateTime.now().toIso8601String();
     String path = '$directory/$fileName.png';
-    if(_currentTab!=TabItem.library)
-    screenshotController.capture(path: path).then((File image) {
-      print(path);
-    }).catchError((onError) {
-      print(onError);
-    });
+    if (_currentTab != TabItem.library)
+      screenshotController.capture(path: path).then((File image) {
+        print(path);
+      }).catchError((onError) {
+        print(onError);
+      });
   }
 }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_stack_overflow/features/notification/notification_dialog.dart';
+import 'package:showcaseview/showcase.dart';
+import 'package:showcaseview/showcase_widget.dart';
 
 class NavigationBar extends StatefulWidget {
   final String title;
@@ -7,14 +9,32 @@ class NavigationBar extends StatefulWidget {
 
   final bool showNotificationIcon;
 
+  final String leftTabText;
+  final String rightTabText;
+  final TabController tabController;
+
+
   NavigationBar(this.title,
-      {this.isTabEnabled = false, this.showNotificationIcon = false});
+      {this.isTabEnabled = false, this.showNotificationIcon = false,this.leftTabText,this.rightTabText,this.tabController});
 
   @override
   _NavigationBarState createState() => _NavigationBarState();
 }
 
 class _NavigationBarState extends State<NavigationBar> {
+  GlobalKey _one = GlobalKey();
+  GlobalKey _two = GlobalKey();
+
+  @override
+  void initState() {
+
+
+    super.initState();
+    //Start showcase view after current widget frames are drawn.
+    WidgetsBinding.instance.addPostFrameCallback((_) => ShowCaseWidget.of(context)
+        .startShowCase([_one,_two ]));
+  }
+
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -33,40 +53,45 @@ class _NavigationBarState extends State<NavigationBar> {
       actions: [
         Builder(
           builder: (context) => this.widget.showNotificationIcon
-              ? IconButton(
-                  icon: Stack(
-                    children: <Widget>[
-                      Icon(Icons.notifications_none),
-                      Positioned(
-                        top: 0.0,
-                        left: 9.0,
-                        child: Container(
-                          padding: EdgeInsets.all(2),
-                          decoration: new BoxDecoration(
-                            color: Colors.red,
-                            borderRadius: BorderRadius.circular(6),
-                          ),
-                          constraints: BoxConstraints(
-                            minWidth: 12,
-                            minHeight: 12,
-                          ),
-                          child: Text(
-                            '2',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 8,
+              ? Showcase(
+                key: _one,
+                title: 'Notifications',
+                description: 'App latest notifications',
+                child: IconButton(
+                    icon: Stack(
+                      children: <Widget>[
+                        Icon(Icons.notifications_none),
+                        Positioned(
+                          top: 0.0,
+                          left: 9.0,
+                          child: Container(
+                            padding: EdgeInsets.all(2),
+                            decoration: new BoxDecoration(
+                              color: Colors.red,
+                              borderRadius: BorderRadius.circular(6),
                             ),
-                            textAlign: TextAlign.center,
+                            constraints: BoxConstraints(
+                              minWidth: 12,
+                              minHeight: 12,
+                            ),
+                            child: Text(
+                              '2',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 8,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
                           ),
-                        ),
-                      )
-                    ],
+                        )
+                      ],
+                    ),
+                    onPressed: () => showDialog(
+                        context: context, builder: (context) => CustomDialog()),
+                    tooltip:
+                        MaterialLocalizations.of(context).openAppDrawerTooltip,
                   ),
-                  onPressed: () => showDialog(
-                      context: context, builder: (context) => CustomDialog()),
-                  tooltip:
-                      MaterialLocalizations.of(context).openAppDrawerTooltip,
-                )
+              )
               : new Opacity(
                   opacity: 0.0,
                   child: new Padding(
@@ -78,19 +103,20 @@ class _NavigationBarState extends State<NavigationBar> {
       ],
       bottom: this.widget.isTabEnabled
           ? TabBar(
+              controller:this.widget.tabController,
               labelColor: Colors.black,
               unselectedLabelColor: Colors.blueGrey,
               indicatorColor: Colors.black,
               tabs: <Widget>[
                 Tab(
                   child: Text(
-                    'Contents',
+                    this.widget.leftTabText,
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                   ),
                 ),
                 Tab(
                   child: Text(
-                    'Tools',
+                    this.widget.rightTabText,
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                   ),
                 ),

@@ -23,50 +23,65 @@ class ExpansionTileSample extends StatefulWidget {
   _ExpansionTileSampleState createState() => _ExpansionTileSampleState();
 }
 
-class _ExpansionTileSampleState extends State<ExpansionTileSample> {
+class _ExpansionTileSampleState extends State<ExpansionTileSample> with SingleTickerProviderStateMixin{
   int bottomNavigationIndex = 0;
+
+  TabController _tabController;
+  @override
+  void initState() {
+    super.initState();
+    _tabController = new TabController(vsync: this, length: 2);
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
+
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 2,
-      child: Scaffold(
-        appBar: PreferredSize(
-            preferredSize: Size.fromHeight(100),
-            child: NavigationBar(
-              'Table of Contents',
-              isTabEnabled: true,
-            )),
-        drawer: CustomDrawer(),
-        backgroundColor: Colors.grey[100],
-        body: TabBarView(
-          children: <Widget>[
-            ListView.builder(
-              itemBuilder: (BuildContext context, int index) =>
-                  EntryItem(data[index], context),
-              itemCount: data.length,
-            ),
-            ListView.builder(
-              itemCount: 10,
-              itemBuilder: (context,index){
-                if(index % 2 == 0){
-                  return Divider(height: 2,);
-                }
-                else{
-                return Ink(
-                  color: Colors.white,
-                  child: ListTile(
+    return Scaffold(
+      appBar: PreferredSize(
+          preferredSize: Size.fromHeight(100),
+          child: NavigationBar(
+            'Table of Contents',
+            isTabEnabled: true,
+            leftTabText: 'Contents',
+            rightTabText: 'Tools',
+            tabController: _tabController,
+          )),
+      drawer: CustomDrawer(),
+      backgroundColor: Colors.grey[100],
+      body: TabBarView(
+        controller: _tabController,
+        children: <Widget>[
+          ListView.builder(
+            itemBuilder: (BuildContext context, int index) =>
+                EntryItem(data[index], context),
+            itemCount: data.length,
+          ),
+          ListView.builder(
+            itemCount: 10,
+            itemBuilder: (context,index){
+              if(index % 2 == 0){
+                return Divider(height: 2,);
+              }
+              else{
+              return Ink(
+                color: Colors.white,
+                child: ListTile(
 
-                    trailing: Icon(Icons.navigate_next),
-                    title: Text('Interactive Tool $index',style: TextStyle(color: Colors.black),),
-                    onTap: (){},
-                  ),
-                );
-                }
-              },
-            ),
-          ],
-        ),
+                  trailing: Icon(Icons.navigate_next),
+                  title: Text('Interactive Tool $index',style: TextStyle(color: Colors.black),),
+                  onTap: (){},
+                ),
+              );
+              }
+            },
+          ),
+        ],
       ),
     );
   }

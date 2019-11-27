@@ -30,6 +30,7 @@ dependencies:
   floating_search_bar: ^0.2.0
   screenshot: ^0.1.1
   path_provider: ^1.4.4
+  showcaseview: ^0.1.3
 
 
 

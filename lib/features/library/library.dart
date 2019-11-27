@@ -18,7 +18,7 @@ class _LibraryState extends State<Library> {
     return Scaffold(
       appBar: PreferredSize(
           preferredSize: Size.fromHeight(kToolbarHeight),
-          child: NavigationBar('History d')),
+          child: NavigationBar('History')),
 //      body: HeaderList(
 //          <ListItem>[
 //            HeadingItem("Recents"),
